@@ -10,7 +10,7 @@
   --color-border-img-profile: rgba(142, 182, 155, 0.215);
    --color-border-btn: rgba(142, 182, 155, 0.692);
   --color-card: rgb(35, 83, 71);
-  --color-card-filtro: rgba(142, 182, 155, 0);
+  --color-card-filtro: rgba(142, 182, 155, 0.001);
   --color-text: rgb(11, 43, 38);
   --color-bg-gradient: linear-gradient(
     135deg,
