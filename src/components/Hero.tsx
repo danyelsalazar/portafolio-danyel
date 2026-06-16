@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={contact.label}
-                className="link btn-contacts-profile"
+                className="link btn-contacts-profile btn"
               >
                 <IconoComponente size={28} color="#051f20" />
                 {contact.label}

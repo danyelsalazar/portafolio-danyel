@@ -424,10 +424,11 @@
 }
 @media (max-width: 700px) {
   .container-photo-profile {
-    width: 260px;
-    height: 260px;
+    width: 180px;
+    height: 180px;
     right: auto;
-    top: 350px;
+    top: 160px;
+    right: 40px;
   }
   .container-home {
     width: 80dvw;
@@ -463,14 +464,19 @@
     margin-top: 10%;
   }
 }
-@media (max-width: 380px){
-    .container-photo-profile {
-    width: 260px;
-    height: 260px;
+@media (max-width: 640px){
+  .container-photo-profile{
+    position: relative;
+    top: auto;
     right: auto;
-    top: 410px;
+     width: 200px;
+    height: 200px;
   }
-  #root {
-    margin-bottom: auto;
+  .section-profile{
+    justify-content: center;
+    align-items: center;
+  }
+  #root{
+    margin-top: auto;
   }
 }

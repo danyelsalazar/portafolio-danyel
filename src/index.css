@@ -8,7 +8,7 @@
   --color-btn: rgb(218, 241, 222);
   --color-border: rgba(142, 182, 155, 0.086);
   --color-border-img-profile: rgba(142, 182, 155, 0.215);
-   --color-border-btn: rgba(142, 182, 155, 0.692);
+  --color-border-btn: rgba(142, 182, 155, 0.692);
   --color-card: rgb(35, 83, 71);
   --color-card-filtro: rgba(142, 182, 155, 0.001);
   --color-text: rgb(11, 43, 38);
@@ -26,26 +26,62 @@ body {
       rgba(5, 31, 32, 0.317) 0%,
       rgba(11, 43, 38, 0.85) 100%
     ),
-    /* Capa 2 (Abajo)*/ url("/public/fondo-portafolio.jpg");
+    url("/public/fondo-portafolio.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
   margin: 0;
   color: white;
   width: 100dvw;
-  height: 100svh;
   font-family: "Lato", sans-serif;
   font-weight: 200;
   font-style: normal;
+
+  /* CAMBIOS CRÍTICOS PARA EL LOGOUT VERTICAL */
+  min-height: 100vh !important; /* Altura mínima, no fija. Permite que la página crezca */
+  height: auto !important; /* Rompe el candado del 100svh */
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* Centra horizontalmente tus secciones */
+  justify-content: flex-start; /* Alinea todo desde arriba para que no colisione */
+
+  /* Espaciado premium para que el Hero no empiece pegado al techo del navegador */
+  padding: 4rem 0;
+  gap: 60px; /* Separación perfecta entre el Hero y tus Proyectos */
 }
-button{
+button {
   border: none;
 }
-a{
+a {
   text-decoration: none;
+}
+
+.btn{
+  border: 1px solid var(--color-border-btn);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-btn);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--color-bg);
+  font-weight: 300;
+  transition:
+    transform ease 0.2s,
+    background-color ease 0.2s;
+}
+.btn:hover {
+  transform: scale(1.05);
+  background-color: var(--color-bg);
+  box-shadow:
+    inset 0 4px 20px rgba(0, 0, 0, 0.2),
+    0 0 50px var(--color-btn);
+  color: var(--color-btn);
+}
+.btn:hover svg,
+.btn:hover g,
+.btn:hover path {
+  fill: var(--color-btn);
 }

@@ -1,0 +1,233 @@
+/* ===================================================
+   SECCIÓN GLOBAL DE PROYECTOS
+=================================================== */
+.proyectos-seccion {
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.proyectos-contenedor {
+  width: 80dvw; /* Misma anchura que tu tarjeta Hero para alinear el portafolio */
+  max-width: 1200px;
+}
+
+/* Título de la sección estilo consola */
+.proyectos-titulo {
+  font-family: monospace;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-btn);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+/* Un sutil indicador de comando clásico de terminal antes del título */
+.proyectos-titulo::before {
+  content: "> ";
+  color: #fff;
+  opacity: 0.5;
+}
+
+/* ===================================================
+   GRID DE TARJETAS (Responsive por defecto)
+=================================================== */
+.proyectos-grid {
+  display: grid;
+  /* Crea columnas automáticas de mínimo 340px. Si no caben, saltan verticalmente */
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+/* ===================================================
+   LA TARJETA DE PROYECTO (Estilo Ventana de IDE)
+=================================================== */
+.proyecto-tarjeta {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  padding: 3rem 1.5rem 1.5rem 1.5rem; /* Padding superior alto para los Window Controls */
+  overflow: hidden;
+  
+  /* Preparación para elevación tridimensional */
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Capa trasera de Cristal blindada para producción (Vercel) */
+.proyecto-tarjeta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  z-index: -1;
+  background-color: var(--color-card-filtro); /* Tu fondo translúcido */
+  -webkit-backdrop-filter: blur(4.5px);
+  backdrop-filter: blur(4.5px);
+}
+
+/* Inyección de Botones Mac mediante CSS para mantener tu HTML limpio */
+.proyecto-tarjeta::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff5f56; /* Botón Rojo */
+  /* Dibujamos los otros dos botones usando sombras para optimizar rendimiento */
+  box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f; 
+}
+
+/* --- EFECTO HOVER PREMIUM EN TARJETAS --- */
+.proyecto-tarjeta:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) translateZ(10px);
+  border-color: var(--color-btn);
+    box-shadow:
+      inset 0 4px 20px rgba(0, 0, 0, 0.2),
+      0 0 50px var(--color-btn);
+}
+
+/* ===================================================
+   COMPONENTES INTERNOS DE LA TARJETA
+=================================================== */
+
+/* Contenedor de la Imagen */
+.proyecto-imagen-contenedor {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.proyecto-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(20%) brightness(0.9);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.proyecto-tarjeta:hover .proyecto-imagen {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1.05);
+}
+
+/* Textos */
+.proyecto-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proyecto-nombre {
+  font-family: monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.proyecto-descripcion {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-btn);
+  margin: 0;
+  min-height: 70px; /* Asegura alineación si una descripción es más corta */
+}
+
+/* ===================================================
+   SECCIÓN DE TECNOLOGÍAS (Micro-Tags)
+=================================================== */
+.proyecto-tecnologias-seccion {
+  margin-top: 5px;
+}
+
+.proyecto-tecnologias-titulo {
+  font-family: monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-btn);
+  opacity: 0.6;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.proyecto-tecnologias-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Item de tecnología estilo consola */
+.proyecto-tecnologia-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.proyecto-tarjeta:hover .proyecto-tecnologia-item {
+  border-color: rgba(var(--color-btn-rgb), 0.2);
+  background: rgba(var(--color-btn-rgb), 0.02);
+}
+
+.proyecto-tecnologia-texto {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #daf1de;
+}
+
+/* ===================================================
+   ENLACES Y BOTONES DE ACCIÓN
+=================================================== */
+.proyecto-enlaces {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+}
+.enlace-repo svg,
+.enlace-repo g,
+.enlace-repo path{
+    fill: var(--color-btn-rgb);
+}
+
+/* Estilo alternativo sutil para el segundo botón (Demo) si deseas diferenciarlo */
+.proyecto-enlace:last-of-type:not(:first-of-type) {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.proyecto-enlace:last-of-type:not(:first-of-type):hover {
+  background-color: var(--color-btn);
+  color: #000;
+}
+
+
+/* ===================================================
+   DISEÑO RESPONSIVE (Móviles)
+=================================================== */
+@media (max-width: 768px) {
+  .proyectos-contenedor {
+    width: 90dvw; /* Expande el contenedor para aprovechar pantallas chicas */
+  }
+  
+  .proyectos-grid {
+    grid-template-columns: 1fr; /* Una sola tarjeta por fila obligatoria */
+    gap: 20px;
+  }
+}
