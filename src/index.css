@@ -4,19 +4,19 @@
   box-sizing: border-box;
 }
 :root {
-  --color-bg: #051f20;
-  --color-btn: #daf1de;
+  --color-bg: rgb(5, 31, 32);
+  --color-btn: rgb(218, 241, 222);
   --color-border: rgba(142, 182, 155, 0.086);
   --color-border-img-profile: rgba(142, 182, 155, 0.215);
    --color-border-btn: rgba(142, 182, 155, 0.692);
-  --color-card: #235347;
-  --color-card-filtro: #8eb69b00;
-  --color-text: #0b2b26;
+  --color-card: rgb(35, 83, 71);
+  --color-card-filtro: rgba(142, 182, 155, 0);
+  --color-text: rgb(11, 43, 38);
   --color-bg-gradient: linear-gradient(
     135deg,
-    #031314 0%,
-    #051f20 50%,
-    #0b2b26 100%
+    rgb(3, 19, 20) 0%,
+    rgb(5, 31, 32) 50%,
+    rgb(11, 43, 38) 100%
   );
 }
 body {

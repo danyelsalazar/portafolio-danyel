@@ -42,7 +42,7 @@
   /* Conecta con las variables que TypeScript inyecta en el HTML inline */
   background: radial-gradient(
     50px circle at var(--mouse-x) var(--mouse-y),
-    #daf1de7d,
+    rgba(218, 241, 222, 0.49),
     transparent 80%
   );
 }
@@ -295,13 +295,13 @@
   display: inline-block;
 }
 .close {
-  background-color: #ff5f56;
+  background-color: rgb(255, 95, 86);
 }
 .minimize {
-  background-color: #ffbd2e;
+  background-color: rgb(255, 189, 46);
 }
 .maximize {
-  background-color: #27c93f;
+  background-color: rgb(39, 201, 63);
 }
 
 /* ====== ONLINE ===== */
@@ -318,7 +318,7 @@
 .ping-circle {
   width: 8px;
   height: 8px;
-  background-color: #27c93f;
+  background-color: rgb(39, 201, 63);
   border-radius: 50%;
   position: relative;
 }
@@ -328,7 +328,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background-color: #27c93f;
+  background-color: rgb(39, 201, 63);
   animation: pulso-radar 2s infinite ease-out;
 }
 @keyframes pulso-radar {
