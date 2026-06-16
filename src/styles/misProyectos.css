@@ -101,7 +101,7 @@
 /* Contenedor de la Imagen */
 .proyecto-imagen-contenedor {
   width: 100%;
-  height: 180px;
+  height: 200px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -225,9 +225,13 @@
   .proyectos-contenedor {
     width: 90dvw; /* Expande el contenedor para aprovechar pantallas chicas */
   }
-  
   .proyectos-grid {
     grid-template-columns: 1fr; /* Una sola tarjeta por fila obligatoria */
     gap: 20px;
+  }
+}
+@media (min-width: 770px){
+  .proyecto-imagen-contenedor{
+    height: 300px;
   }
 }
