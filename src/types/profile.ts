@@ -24,7 +24,7 @@ export interface Proyectos {
       label: string;
     }[], //asi acepta multiples objetos, un array de multiples obejtos
   imagenURL: string;
-  repositorio:
+  repositorio?:
     {
       icono: ComponentType<{ size?: number; color?: string }>,
       label: string,

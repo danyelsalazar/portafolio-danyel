@@ -37,9 +37,9 @@ export const miPerfil: ProfileHero = {
 export const misProyectos: Proyectos[] = [
   {
     id: "1",
-    titulo: "E-Commerce MERN",
+    titulo: "Recognitions-app",
     descripcion:
-      "Plataforma de comercio electrónico con pasarela de pagos, autenticación JWT y panel de administración dinámico.",
+      "Desarrollo de “recognitions-app”, plataforma interna de reconocimiento entre pares y evaluaciones 180°, con un equipo fullstack.",
     tecnologias: [
       {
         icono: IconoExpress,
@@ -50,13 +50,8 @@ export const misProyectos: Proyectos[] = [
         label: "NodeJS",
       },
     ],
-    imagenURL: "/proyecto-2.avif", 
-    repositorio: {
-      icono: IconoGitHub,
-      label: "Repositorio",
-      linkURL: "github.com",
-    },
-    demoURL: "https://vercel.app",
+    imagenURL: "/proyecto-reconocimientos-app.png", 
+    demoURL: "https://recognitions.forit.ar/",
   },
   {
     id: "2",
