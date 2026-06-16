@@ -1,3 +1,15 @@
+import { DiMongodb, DiReact, DiNodejs } from "react-icons/di";
+import {
+  SiExpress,
+  SiHtml5,
+  SiCss,
+  SiGit,
+  SiPostman,
+  SiVercel,
+  SiRender,
+  SiPostgresql
+} from "react-icons/si";
+import { BiCodeAlt } from "react-icons/bi";
 import {
   IconoCV,
   IconoExpress,
@@ -5,7 +17,7 @@ import {
   IconoLinkedIn,
   IconoNodeJS,
 } from "../components/iconos/iconosContacto";
-import type { ProfileHero, Proyectos } from "../types/profile";
+import type { ProfileHero, Proyectos, SkillCategory } from "../types/profile";
 
 // informacion para el hero
 export const miPerfil: ProfileHero = {
@@ -50,7 +62,7 @@ export const misProyectos: Proyectos[] = [
         label: "NodeJS",
       },
     ],
-    imagenURL: "/proyecto-reconocimientos-app.png", 
+    imagenURL: "/proyecto-reconocimientos-app.png",
     demoURL: "https://recognitions.forit.ar/",
   },
   {
@@ -74,5 +86,36 @@ export const misProyectos: Proyectos[] = [
       label: "Repositorio",
       linkURL: "github.com",
     },
+  },
+];
+
+// mis habilidades / tecnologias que manejo
+export const misHabilidades: SkillCategory[] = [
+  {
+    titulo: "Frontend Stack",
+    lista: [
+      { label: "React", icono: DiReact },
+      { label: "TypeScript", icono: BiCodeAlt },
+      { label: "HTML5", icono: SiHtml5 },
+      { label: "CSS3", icono: SiCss },
+    ],
+  },
+  {
+    titulo: "Backend & Base de Datos",
+    lista: [
+      { label: "Node.js", icono: DiNodejs },
+      { label: "Express", icono: SiExpress },
+      { label: "MongoDB", icono: DiMongodb },
+      { label: "Postgresql", icono: SiPostgresql}
+    ],
+  },
+  {
+    titulo: "Herramientas & Despliegue",
+    lista: [
+      { label: "Git & GitHub", icono: SiGit },
+      { label: "Postman", icono: SiPostman },
+      { label: "Vercel", icono: SiVercel },
+      {label: "Render", icono: SiRender}
+    ],
   },
 ];

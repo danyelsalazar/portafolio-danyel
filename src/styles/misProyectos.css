@@ -66,7 +66,7 @@
   inset: 0;
   border-radius: 20px;
   z-index: -1;
-  background-color: var(--color-card-filtro); /* Tu fondo translúcido */
+  background-color: rgba(218, 241, 222, 0.165); /* Tu fondo translúcido */
   -webkit-backdrop-filter: blur(4.5px);
   backdrop-filter: blur(4.5px);
 }

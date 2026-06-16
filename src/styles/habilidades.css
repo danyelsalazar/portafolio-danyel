@@ -1,0 +1,191 @@
+/* ===================================================
+   SECCIÓN GLOBAL DE HABILIDADES
+=================================================== */
+.skills-seccion {
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-contenedor {
+  width: 80dvw;
+  max-width: 1200px;
+}
+
+.skills-titulo {
+  font-family: monospace;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-btn);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+}
+
+.skills-titulo::before {
+  content: "> ";
+  color: #fff;
+  opacity: 0.5;
+}
+
+/* ===================================================
+   GRID DE CATEGORÍAS (3 Columnas principales)
+=================================================== */
+.skills-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+/* Tarjeta de Cristal para cada categoría */
+.skills-card-categoria {
+  position: relative;
+  border-radius: 20px;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+
+  /* Borde de cristal degradado idéntico al Hero */
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(var(--color-card-filtro), var(--color-card-filtro)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.02)
+    );
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.8s ease;
+}
+/* Inyección de Botones Mac mediante CSS para mantener tu HTML limpio */
+.skills-card-categoria::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff5f56; /* Botón Rojo */
+  /* Dibujamos los otros dos botones usando sombras para optimizar rendimiento */
+  box-shadow:
+    16px 0 0 #ffbd2e,
+    32px 0 0 #27c93f;
+}
+/* Soporte estricto de desenfoque para Vercel */
+.skills-card-categoria::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  z-index: -1;
+  -webkit-backdrop-filter: blur(4.5px);
+  backdrop-filter: blur(4.5px);
+}
+
+.skills-card-categoria:hover {
+  border-color: rgba(var(--color-btn-rgb), 0.3);
+  box-shadow:
+    0 12px 40px 0 rgba(0, 0, 0, 0.55),
+    0 0 20px rgba(var(--color-btn-rgb), 0.1);
+}
+/* efecto de giro para cuando se haga clic */
+.giro-card{
+    transform: perspective(1000px) rotateY(360deg) translateZ(15px);
+}
+
+/* Títulos internos de categoría */
+.skills-category-title {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+/* ===================================================
+   ITEMS INDIVIDUALES (Estilo Inventario RPG)
+=================================================== */
+.skills-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* El círculo del icono simula un nodo tecnológico encendido */
+.skill-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(var(--color-btn-rgb), 0.03);
+  border: 1px solid rgba(var(--color-btn-rgb), 0.15);
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.skill-name {
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: #daf1de;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+/* --- HOVER PREMIUM EN CADA HABILIDAD --- */
+.skill-item:hover {
+  transform: translateX(6px); /* Pequeño desplazamiento táctico a la derecha */
+  background: rgba(var(--color-btn-rgb), 0.04);
+  border-color: var(--color-btn);
+  box-shadow: 0 0 15px rgba(var(--color-btn-rgb), 0.15);
+}
+
+.skill-item:hover .skill-icon-wrapper {
+  background: var(--color-btn);
+  border-color: var(--color-btn);
+  box-shadow: 0 0 10px var(--color-btn);
+}
+
+/* El icono cambia de color base a oscuro cuando su fondo se vuelve verde */
+.skill-item:hover .skill-icon-wrapper svg {
+  fill: #051f20 !important;
+  color: #051f20 !important;
+}
+
+.skill-item:hover .skill-name {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ===================================================
+   DISEÑO RESPONSIVE
+=================================================== */
+@media (max-width: 768px) {
+  .skills-contenedor {
+    width: 90dvw;
+  }
+  .skills-categories-grid {
+    grid-template-columns: 1fr; /* Una sola columna en celulares */
+    gap: 20px;
+  }
+}

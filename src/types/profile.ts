@@ -3,7 +3,12 @@ import type { ComponentType } from "react";
 export interface LinkContaco {
   label: string;
   url: string;
-  icono: ComponentType<{ size?: number; color?: string }>,
+  icono: ComponentType<{ size?: number; color?: string }>;
+}
+
+export interface habilidades{
+  label: string;
+  icono: ComponentType<{ size?: number; color?: string }>;
 }
 
 export interface ProfileHero {
@@ -20,15 +25,20 @@ export interface Proyectos {
   descripcion: string;
   tecnologias: 
     {
-      icono: ComponentType<{ size?: number; color?: string }>,
+      icono: ComponentType<{ size?: number; color?: string }>;
       label: string;
     }[], //asi acepta multiples objetos, un array de multiples obejtos
   imagenURL: string;
   repositorio?:
     {
-      icono: ComponentType<{ size?: number; color?: string }>,
-      label: string,
-      linkURL: string
-    }, //enlace a gitHub
+      icono: ComponentType<{ size?: number; color?: string }>;
+      label: string;
+      linkURL: string;
+    }; //enlace a gitHub
   demoURL?: string; //enlace a la web en vivo, es opcional
+}
+
+export interface SkillCategory {
+  titulo: string;
+  lista: habilidades[];
 }
