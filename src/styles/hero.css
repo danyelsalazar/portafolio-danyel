@@ -1,0 +1,473 @@
+.container-home {
+  background-color: var(--color-card-filtro);
+  padding: 4.5rem 3.5rem;
+  width: 60dvw;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  /* El secreto: desenfoca lo que está detrás de la tarjeta */
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px); /* Soporte para Safari */
+  /* Bordes redondeados suaves estilo Apple */
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image:
+    linear-gradient(var(--color-card-filtro), var(--color-card-filtro)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.03));
+  /* Sombra muy suave para dar profundidad */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.574);
+  transition:
+    transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  animation: encender-foco 3.5s linear forwards;
+}
+.container-home:hover {
+  transform: perspective(1000px) rotateX(3deg) rotateY(-2deg) translateZ(20px);
+}
+
+/* El haz de luz dinámico */
+.container-home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Permite hacer click en los botones sin estorbar */
+  z-index: 1;
+
+  /* Conecta con las variables que TypeScript inyecta en el HTML inline */
+  background: radial-gradient(
+    50px circle at var(--mouse-x) var(--mouse-y),
+    #daf1de7d,
+    transparent 80%
+  );
+}
+
+/* Enciende la luz en el hover */
+.container-home:hover::after {
+  opacity: 1;
+}
+
+/* ========== imagen =========  */
+/* ========== contenedor de la imagen =========  */
+.container-photo-profile {
+  position: absolute;
+  top: 140px;
+  right: -130px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--color-border-img-profile);
+
+  border: 12px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 0px rgba(0, 0, 0, 0);
+
+  /* CAMBIO: 'linear' en vez de 'ease-out' para calcar la velocidad del texto */
+  animation: encender-foco 3.5s linear forwards;
+  z-index: 200;
+}
+
+/* ========== la imagen de perfil =========  */
+.img-profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: -140px center;
+
+  mix-blend-mode: luminosity;
+  filter: brightness(0.7) contrast(1.1);
+
+  /* CAMBIO: 'linear' para evitar el retraso o suavizado final */
+  animation: revelar-foto 3.5s linear forwards;
+}
+
+/* ===================================================
+   ANIMACIONES CALIBRADAS EN MILISEGUNDOS CON EL TEXTO
+=================================================== */
+
+/* 1. Animación para el contenedor (Aro de luz) */
+@keyframes encender-foco {
+  0% {
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+  /* Primer chispazo corto (Letras 3 a 4) */
+  21% {
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+  22% {
+    border-color: var(--color-btn);
+    box-shadow: 0 0 30px var(--color-btn);
+  }
+  28% {
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+  /* Segundo chispazo largo (A mitad del texto, Letras 7 a 9) */
+  50% {
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+  51% {
+    border-color: var(--color-btn);
+    box-shadow: 0 0 40px var(--color-btn);
+  }
+  64% {
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+  }
+  /* Micro parpadeo final de advertencia (Letra 11) */
+  78% {
+    border-color: var(--color-btn);
+    box-shadow: 0 0 40px var(--color-btn);
+  }
+  82% {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  }
+  /* Encendido definitivo: Clavado al 100% en la última letra (Paso 14) */
+  99%,
+  100% {
+    border-color: var(--color-btn);
+    box-shadow:
+      inset 0 4px 20px rgba(0, 0, 0, 0.2),
+      0 0 50px var(--color-btn);
+  }
+}
+
+/* 2. Animación para la foto (Sincronizada con el Aro de luz) */
+@keyframes revelar-foto {
+  0% {
+    mix-blend-mode: luminosity;
+    filter: brightness(0.7) contrast(1.1);
+  }
+  /* Sincronizado con primer chispazo */
+  21% {
+    mix-blend-mode: luminosity;
+    filter: brightness(0.7) contrast(1.1);
+  }
+  22% {
+    mix-blend-mode: normal;
+    filter: brightness(1.4) contrast(1);
+  }
+  28% {
+    mix-blend-mode: luminosity;
+    filter: brightness(0.7) contrast(1.1);
+  }
+
+  /* Sincronizado con segundo chispazo */
+  50% {
+    mix-blend-mode: luminosity;
+    filter: brightness(0.7) contrast(1.1);
+  }
+  51% {
+    mix-blend-mode: normal;
+    filter: brightness(1.4) contrast(1);
+  }
+  64% {
+    mix-blend-mode: luminosity;
+    filter: brightness(0.7) contrast(1.1);
+  }
+
+  /* Destello final y asentamiento exacto con el texto */
+  78% {
+    mix-blend-mode: normal;
+    filter: brightness(1.4) contrast(1);
+  }
+  82% {
+    mix-blend-mode: luminosity;
+    filter: brightness(0.7) contrast(1.1);
+  }
+
+  99%,
+  100% {
+    mix-blend-mode: normal;
+    filter: brightness(1.4) contrast(1);
+    transform: scale(1.06);
+  }
+}
+
+/* ======SECCIOIN DE TEXTO====== */
+.section-profile {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  gap: 20px;
+}
+
+/* titulo */
+.name-profile {
+  /* Tamaño mínimo: 2.5rem | Tamaño fluido: 6vw | Tamaño máximo: 5rem */
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-family: monospace;
+  color: var(--color-btn);
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+  border-right: 3px solid;
+
+  /* Mantén tus 14 caracteres */
+  width: 14ch;
+  overflow: hidden;
+
+  /* Sombra de texto base (Apagado / Sin brillo inicial) */
+  text-shadow: 0 0 0px rgba(0, 0, 0, 0);
+
+  /* Unificamos las animaciones para que corran al mismo tiempo */
+  animation:
+    escritura 3.5s steps(14) forwards,
+    parpadeo-cursor 0.7s infinite;
+}
+
+@keyframes escritura {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes parpadeo-cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ======= DESCRIPCION Y BOTONES de contacto =========== */
+.description-profile {
+  color: var(--color-btn);
+}
+.links-contacto {
+  display: flex;
+  gap: 15px;
+}
+.link {
+  display: flex;
+  width: max-content;
+}
+.btn-contacts-profile {
+  border: 1px solid var(--color-border-btn);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-btn);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--color-bg);
+  font-weight: 300;
+  transition:
+    transform ease 0.2s,
+    background-color ease 0.2s;
+}
+.btn-contacts-profile:hover {
+  transform: scale(1.05);
+  background-color: var(--color-bg);
+  box-shadow:
+    inset 0 4px 20px rgba(0, 0, 0, 0.2),
+    0 0 50px var(--color-btn);
+  color: var(--color-btn);
+}
+.btn-contacts-profile:hover svg,
+.btn-contacts-profile:hover g,
+.btn-contacts-profile:hover path {
+  fill: var(--color-btn);
+}
+
+/* circulos tipo terminal  */
+.window-controls {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  gap: 8px;
+}
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.close {
+  background-color: #ff5f56;
+}
+.minimize {
+  background-color: #ffbd2e;
+}
+.maximize {
+  background-color: #27c93f;
+}
+
+/* ====== ONLINE ===== */
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-family: monospace;
+  color: var(--color-btn);
+  opacity: 0.8;
+  margin-top: 5px;
+}
+.ping-circle {
+  width: 8px;
+  height: 8px;
+  background-color: #27c93f;
+  border-radius: 50%;
+  position: relative;
+}
+/* El truco del radar parpadeante */
+.ping-circle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #27c93f;
+  animation: pulso-radar 2s infinite ease-out;
+}
+@keyframes pulso-radar {
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* ===== STACK MERN ======= */
+.tech-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--color-btn);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(var(--color-btn-rgb), 0.2);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+/* -- simulador de nombre de arvhivo  */
+.window-tab {
+  position: absolute;
+  top: 10px;
+  left: 100px; /* Separado de los botones Mac */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 6px 6px 0 0;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--color-btn);
+}
+
+/* ===== RESPONSIVE ===== */
+/* ===================================================
+   DISEÑO RESPONSIVE (Celulares y Tablets)
+=================================================== */
+@media (max-width: 1300px) {
+  .container-photo-profile {
+    width: 300px;
+    height: 300px;
+    right: -180px;
+  }
+}
+@media (max-width: 985px) {
+  .container-home {
+    /* 1. Cambiamos de 2 columnas a 1 sola fila vertical */
+    grid-template-columns: 1fr;
+    width: 80dvw; /* Le damos más espacio en los bordes de la pantalla del celular */
+    padding: 4rem 1.5rem 2rem 1.5rem; /* Ajustamos paddings internos */
+    gap: 40px; /* Separación limpia entre los textos y la foto */
+  }
+
+  /* 3. Redimensionamos la foto de perfil para que no rompa el diseño */
+  .container-photo-profile {
+    width: 300px;
+    height: 300px;
+    border-width: 8px;
+    right: -50px;
+    top: 180px;
+  }
+  .img-profile {
+    object-position: -90px center;
+  }
+
+  /* 4. Ajustes en textos y botones */
+  .name-profile {
+    letter-spacing: -0.01em;
+  }
+  .links-contacto {
+    flex-wrap: wrap; /* Si hay muchos botones, saltarán de línea en vez de romperse */
+    gap: 10px;
+  }
+}
+@media (max-width: 745px) {
+  /* 3. Redimensionamos la foto de perfil para que no rompa el diseño */
+  .container-photo-profile {
+    width: 260px;
+    height: 260px;
+  }
+}
+@media (max-width: 700px) {
+  .container-photo-profile {
+    width: 260px;
+    height: 260px;
+    right: auto;
+    top: 350px;
+  }
+  .container-home {
+    width: 80dvw;
+    height: max-content;
+  }
+  .section-profile {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+   .description-profile {
+    text-align: left;
+  }
+  .container-home {
+    width: 92dvw;
+  }
+  .status-badge, .links-contacto{
+    align-self: flex-start;
+  }
+  .tech-tags{
+    align-self: flex-start;
+  }
+  .name-profile{
+        align-self: flex-start;
+    }
+}
+@media (max-width: 440px) {
+    .container-photo-profile{
+        top: 320px;
+    }
+  #root {
+    margin-bottom: auto;
+    margin-top: 10%;
+  }
+}
+@media (max-width: 380px){
+    .container-photo-profile {
+    width: 260px;
+    height: 260px;
+    right: auto;
+    top: 410px;
+  }
+  #root {
+    margin-bottom: auto;
+  }
+}

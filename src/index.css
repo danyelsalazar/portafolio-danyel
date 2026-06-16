@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-bg: #051f20;
+  --color-btn: #daf1de;
+  --color-border: rgba(142, 182, 155, 0.086);
+  --color-border-img-profile: rgba(142, 182, 155, 0.215);
+   --color-border-btn: rgba(142, 182, 155, 0.692);
+  --color-card: #235347;
+  --color-card-filtro: #8eb69b00;
+  --color-text: #0b2b26;
+  --color-bg-gradient: linear-gradient(
+    135deg,
+    #031314 0%,
+    #051f20 50%,
+    #0b2b26 100%
+  );
+}
+body {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 31, 32, 0.317) 0%,
+      rgba(11, 43, 38, 0.85) 100%
+    ),
+    /* Capa 2 (Abajo)*/ url("/public/fondo-portafolio.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  width: 100dvw;
+  height: 100dvh;
+  font-family: "Lato", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  border: none;
+}
+a{
+  text-decoration: none;
+}
