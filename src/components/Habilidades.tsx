@@ -16,7 +16,7 @@ const Habilidades: React.FC = () => {
       <div className="skills-contenedor">
         
         <h2 className="skills-titulo">
-          Skills Matrix / Inventory
+          Habilidades / Skills
         </h2>
 
         <div className="skills-categories-grid">
