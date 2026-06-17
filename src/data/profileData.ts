@@ -14,6 +14,8 @@ import {
   SiPrisma,
   SiDocker,
   SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
 } from "react-icons/si";
 import { BiCodeAlt } from "react-icons/bi";
 import {
@@ -56,7 +58,7 @@ export const miPerfil: ProfileHero = {
 export const misProyectos: Proyectos[] = [
   {
     id: "1",
-    titulo: "Recognitions-app",
+    titulo: "Recognitions-app (Desarrollo colaborativo)",
     descripcion:
       "Desarrollo de “recognitions-app”, plataforma interna de reconocimiento entre pares y evaluaciones 180°, con un equipo fullstack.",
     tecnologias: [
@@ -83,6 +85,14 @@ export const misProyectos: Proyectos[] = [
       {
         icono: SiDocker,
         label: "Docker",
+      },
+      {
+        icono: SiNextdotjs,
+        label: "NexJS",
+      },
+      {
+        icono: SiTailwindcss,
+        label: "Tailwindcss",
       }
     ],
     imagenURL: "/proyecto-reconocimientos-app.png",
@@ -118,6 +128,10 @@ export const misProyectos: Proyectos[] = [
         icono: SiJavascript,
         label:"JavaScript"
       },
+      {
+        icono: SiCss,
+        label: "CSS",
+      }
     ],
     imagenURL: "/proyecto-info-track.png",
     repositorio: {
