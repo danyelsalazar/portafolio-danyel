@@ -4,7 +4,7 @@ import "../styles/sobreMi.css";
 
 const SobreMi: React.FC = () => {
   return (
-    <section className="about-seccion">
+    <section className="about-seccion" id='sobre-mi'>
       <div className="about-contenedor">
         
         {/* Título de la sección con prompt de consola */}

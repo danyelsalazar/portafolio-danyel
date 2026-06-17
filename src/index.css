@@ -19,11 +19,15 @@
     rgb(11, 43, 38) 100%
   );
 }
-#root {
+main{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 2rem;
+}
+html{
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;

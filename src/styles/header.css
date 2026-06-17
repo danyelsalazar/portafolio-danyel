@@ -1,0 +1,175 @@
+/* ===================================================
+   HEADER CONFIGURACIÓN BASE (Fijo y Flotante)
+=================================================== */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Altura inicial generosa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Siempre por encima de cualquier componente */
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  
+  /* Transición suave para cuando se active el modo 'scrolled' */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.navbar-contenedor {
+  width: 80dvw;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===================================================
+   ANIMACIÓN DE SCROLL ACTIVADA POR REACT
+=================================================== */
+.navbar-scrolled {
+  height: 60px; /* Se vuelve más compacto */
+  background-color: rgba(5, 31, 32, 0.5); /* Activa fondo traslúcido */
+  border-bottom: 1px solid rgba(var(--color-btn-rgb), 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 1px 15px rgba(var(--color-btn-rgb), 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ===================================================
+   ELEMENTOS DE LA BARRA
+=================================================== */
+.navbar-logo {
+  font-family: monospace;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: default;
+}
+
+.logo-prompt {
+  color: var(--color-btn);
+  opacity: 0.6;
+  margin-right: 6px;
+}
+
+.logo-texto {
+  color: #fff;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Items individuales estilo IDE */
+.nav-item {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #daf1de;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 6px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-index {
+  color: var(--color-btn);
+  margin-right: 4px;
+  font-size: 0.8rem;
+}
+
+.nav-item:hover {
+  color: var(--color-btn);
+  transform: translateY(-1px);
+  background-color: var(--color-btn);
+  color: var(--color-bg);
+  box-shadow: 0 0 15px var(--color-btn);
+}
+.nav-item:hover .nav-index{
+    color: var(--color-bg);
+}
+
+/* Botón especial de Contacto en la barra */
+.nav-btn-contacto {
+  border: 1px solid var(--color-border-btn);
+  background-color: var(--color-btn);
+  padding: 6px 16px;
+  border-radius: 6px;
+  color: var(--color-bg);
+  transition: all 0.3s ease;
+}
+
+.nav-btn-contacto:hover {
+  background-color: var(--color-bg);
+  color: var(--color-btn) !important;
+  box-shadow: 0 0 15px var(--color-btn);
+}
+
+/* ===================================================
+   BOTÓN HAMBURGUESA CELULAR
+=================================================== */
+.navbar-toggle {
+  display: none; /* Oculto en pantallas grandes */
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.linea-b {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-btn);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Transformación animada a 'X' cuando se abre el menú */
+.toggle-active .linea-b:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.toggle-active .linea-b:nth-child(2) { opacity: 0; }
+.toggle-active .linea-b:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ===================================================
+   DISEÑO RESPONSIVE (Móviles y Tablets)
+=================================================== */
+@media (max-width: 768px) {
+  .navbar-contenedor {
+    width: 90dvw;
+  }
+
+  .navbar-toggle {
+    display: flex; /* Aparece el botón en celulares */
+  }
+
+  /* El menú se convierte en una persiana de cristal lateral/desplegable */
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido a la derecha */
+    width: 70dvw;
+    height: 100vh;
+    background-color: rgba(3, 19, 20, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-left: 1px solid rgba(var(--color-btn-rgb), 0.1);
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 105;
+  }
+
+  /* Cuando React activa el menú, desliza hacia adentro */
+  .menu-visible {
+    right: 0;
+  }
+
+  .nav-item {
+    font-size: 1.1rem;
+  }
+}

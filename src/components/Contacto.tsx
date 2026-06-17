@@ -8,13 +8,13 @@ const Contacto: React.FC = () => {
   const [mensaje, setMensaje] = useState('');
 
   return (
-    <section className="contacto-seccion">
-      <div className="contacto-contenedor">
-        
+    <section className="contacto-seccion" id='contacto'>
         {/* Título de la sección con prompt de terminal */}
         <h2 className="contacto-titulo">
           Contacto.exe
         </h2>
+      <div className="contacto-contenedor">
+        
 
         {/* Tarjeta de Cristal del Formulario */}
         <div className="contacto-card">

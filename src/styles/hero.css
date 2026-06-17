@@ -25,6 +25,8 @@
     transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
     box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   animation: encender-foco 3.5s linear forwards;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .container-home:hover {

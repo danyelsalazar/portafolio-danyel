@@ -3,7 +3,7 @@ import "../styles/misProyectos.css"; // Importación de tus nuevos estilos
 
 const MisProyectos = () => {
   return (
-    <section className="proyectos-seccion">
+    <section className="proyectos-seccion" id="proyectos">
       <div className="proyectos-contenedor">
         <h2 className="proyectos-titulo">Mis-Proyectos.md</h2>
 

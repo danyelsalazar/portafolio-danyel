@@ -5,12 +5,12 @@ import "../styles/habilidades.css";
 
 const Habilidades: React.FC = () => {
   return (
-    <section className="skills-seccion">
+    <section className="skills-seccion" id='habilidades'>
       <div className="skills-contenedor">
-        
         <h2 className="skills-titulo">
-          Mis-habilidades-tecnologias.txt
+          Mis-habilidades.txt
         </h2>
+        
 
         <div className="skills-categories-grid">
           {misHabilidades.map((categoria, catIndex) => (

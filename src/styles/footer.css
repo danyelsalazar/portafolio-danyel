@@ -1,0 +1,91 @@
+/* ===================================================
+   PIE DE PÁGINA CONFIGURACIÓN (Estilo Logs)
+=================================================== */
+.footer-sistema {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(3, 19, 20, 0.4); /* Un fondo oscuro muy sutil */
+  border-top: 1px dashed rgba(var(--color-btn-rgb), 0.15); /* Línea discontinua estilo terminal */
+  margin-top: auto; /* Empuja el footer al fondo si el contenido es corto */
+}
+
+.footer-contenedor {
+  width: 80dvw;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* ===================================================
+   LOGS DE INFORMACIÓN (Lado Izquierdo)
+=================================================== */
+.footer-logs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.log-linea {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #daf1de;
+  opacity: 0.7;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Etiquetas clásicas de consola de comandos */
+.log-tag {
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.tag-info {
+  color: #2196f3; /* Azul informativo */
+}
+
+.tag-success {
+  color: #27c93f; /* Verde éxito */
+}
+
+/* ===================================================
+   METADATOS DE VERSIÓN (Lado Derecho)
+=================================================== */
+.footer-version {
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.version-texto {
+  color: #a1a1aa;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.color-resaltado-v {
+  color: var(--color-btn);
+  font-weight: bold;
+}
+
+/* ===================================================
+   DISEÑO RESPONSIVE (Móviles)
+=================================================== */
+@media (max-width: 768px) {
+  .footer-contenedor {
+    width: 90dvw;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-logs {
+    align-items: center;
+  }
+}

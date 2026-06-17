@@ -5,11 +5,13 @@
   width: 100%;
   padding: 4rem 0 8rem 0; /* Más padding abajo para el cierre de la página */
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .contacto-contenedor {
-  width: 60dvw; /* Más angosto (igual que tu Hero original) para que quede estilizado */
+  width: 60dvw; 
   max-width: 800px;
 }
 
@@ -20,6 +22,7 @@
   font-weight: 800;
   margin-bottom: 2.5rem;
   letter-spacing: -0.01em;
+  align-self: flex-start;
 }
 
 .contacto-titulo::before {
@@ -50,6 +53,7 @@
 
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
   transition: transform ease .3s, box-shadow ease .3s;
+  
 }
 .contacto-card:hover {
   border-color: var(--color-btn);
