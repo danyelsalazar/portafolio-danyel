@@ -7,7 +7,13 @@ import {
   SiPostman,
   SiVercel,
   SiRender,
-  SiPostgresql
+  SiPostgresql,
+  SiGraphql,
+  SiTypescript,
+  SiJavascript,
+  SiPrisma,
+  SiDocker,
+  SiReact,
 } from "react-icons/si";
 import { BiCodeAlt } from "react-icons/bi";
 import {
@@ -16,6 +22,7 @@ import {
   IconoGitHub,
   IconoLinkedIn,
   IconoNodeJS,
+  IconoReact,
 } from "../components/iconos/iconosContacto";
 import type { ProfileHero, Proyectos, SkillCategory, Biografia } from "../types/profile";
 
@@ -61,15 +68,31 @@ export const misProyectos: Proyectos[] = [
         icono: IconoNodeJS,
         label: "NodeJS",
       },
+      {
+        icono: SiReact,
+        label: "React",
+      },
+      {
+        icono: SiPostgresql,
+        label: "Postgresql",
+      },
+      {
+        icono: SiPrisma,
+        label: "Prisma",
+      },
+      {
+        icono: SiDocker,
+        label: "Docker",
+      }
     ],
     imagenURL: "/proyecto-reconocimientos-app.png",
     demoURL: "https://recognitions.forit.ar/",
   },
   {
     id: "2",
-    titulo: "Task Manager API",
+    titulo: "Info-Track",
     descripcion:
-      "API RESTful avanzada para la gestión de proyectos de equipos con sockets en tiempo real y arquitectura limpia.",
+      "Aplicación web de gestión universitaria para la UNO. Permite el seguimiento del avance académico del estudiante, cálculo dinámico de materias habilitadas por correlativas, alertas de vencimiento de regularidad y un sistema de valoraciones para el cuerpo docente.",
     tecnologias: [
       {
         icono: IconoExpress,
@@ -79,13 +102,30 @@ export const misProyectos: Proyectos[] = [
         icono: IconoNodeJS,
         label: "NodeJS",
       },
+       {
+        icono: IconoReact,
+        label: "React",
+      },
+      {
+        icono: SiGraphql,
+        label: "Graphql",
+      },
+      {
+        icono: SiTypescript,
+        label:"TypeScript"
+      },
+      {
+        icono: SiJavascript,
+        label:"JavaScript"
+      },
     ],
-    imagenURL: "/proyecto-1.avif",
+    imagenURL: "/proyecto-info-track.png",
     repositorio: {
       icono: IconoGitHub,
       label: "Repositorio",
-      linkURL: "github.com",
+      linkURL: "https://github.com/danyelsalazar/frontend-info-track-UNO.git",
     },
+    demoURL: "https://frontend-info-track-46usp0k4t-danyelsalazars-projects.vercel.app/",
   },
 ];
 
