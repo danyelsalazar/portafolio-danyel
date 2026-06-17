@@ -50,8 +50,8 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100lvh; /* Bloquea la altura al tamaño máximo de la pantalla */
-  z-index: -2; /* Lo envía al fondo, detrás de tus tarjetas de cristal */
-  pointer-events: none; /* Evita que bloquee los clicks de tus botones */
+  z-index: -2; /* Lo envía al fondo, detrás de las tarjetas de cristal */
+  pointer-events: none; /* Evita que bloquee los clicks de los botones */
 
   background:
     linear-gradient(
