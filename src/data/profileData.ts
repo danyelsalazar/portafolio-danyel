@@ -16,6 +16,7 @@ import {
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
+  SiMysql,
 } from "react-icons/si";
 import { BiCodeAlt } from "react-icons/bi";
 import {
@@ -140,6 +141,45 @@ export const misProyectos: Proyectos[] = [
       linkURL: "https://github.com/danyelsalazar/frontend-info-track-UNO.git",
     },
     demoURL: "https://frontend-info-track-46usp0k4t-danyelsalazars-projects.vercel.app/",
+  },
+  {
+    id: "3",
+    titulo: "Task",
+    descripcion:
+      "Aplicación integral para la gestión de tareas con persistencia de datos Creación, edición, filtrado por estado y búsqueda en tiempo real, (esperar unos segundos al entrar para que se active el server)",
+    tecnologias: [
+      {
+        icono: IconoExpress,
+        label: "Express",
+      },
+      {
+        icono: IconoNodeJS,
+        label: "NodeJS",
+      },
+       {
+        icono: IconoReact,
+        label: "React",
+      },
+      {
+        icono: SiJavascript,
+        label:"JavaScript"
+      },
+      {
+        icono: SiCss,
+        label: "CSS",
+      },
+      {
+        icono: SiMysql,
+        label: "Mysql"
+      }
+    ],
+    imagenURL: "/proyecto-task.png",
+    repositorio: {
+      icono: IconoGitHub,
+      label: "Repositorio",
+      linkURL: "https://github.com/danyelsalazar/forit-challenge-task.git",
+    },
+    demoURL: "https://forit-challenge-task.vercel.app/",
   },
 ];
 
