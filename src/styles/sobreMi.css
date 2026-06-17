@@ -1,0 +1,158 @@
+/* ===================================================
+   SECCIÓN GLOBAL SOBRE MÍ
+=================================================== */
+.about-seccion {
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-contenedor {
+  width: 80dvw;
+  max-width: 1200px;
+}
+
+.about-titulo {
+  font-family: monospace;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-btn);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+}
+
+.about-titulo::before {
+  content: "> ";
+  color: #fff;
+  opacity: 0.5;
+}
+
+/* ===================================================
+   LA VENTANA TERMINAL (Tarjeta de Cristal)
+=================================================== */
+.about-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 4rem 2.5rem 3rem 2.5rem; /* Espacio para los botones de arriba */
+  overflow: hidden;
+
+  /* Borde de cristal degradado */
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(var(--color-card-filtro), var(--color-card-filtro)),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.02)
+    );
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  transition: transform ease .3s, box-shadow ease .3s;
+}
+.about-card:hover {
+  border-color: var(--color-btn);
+  box-shadow:
+    inset 0 4px 20px rgba(0, 0, 0, 0.2),
+    0 0 50px var(--color-btn);
+  transform: perspective(1000px) rotateX(3deg) rotateY(-2deg) translateZ(20px);
+}
+/* Efecto Blur blindado para producción */
+.about-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  z-index: -1;
+  -webkit-backdrop-filter: blur(4.5px);
+  backdrop-filter: blur(4.5px);
+}
+
+/* ===================================================
+   TEXTOS ESTILO TERMINAL / CÓDIGO
+=================================================== */
+.about-terminal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.terminal-linea {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* Línea guía lateral de indentación estilo IDE */
+  border-left: 1px dashed rgba(var(--color-btn-rgb), 0.15);
+  padding-left: 15px;
+}
+
+.terminal-prompt {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--color-btn);
+  opacity: 0.6;
+  font-weight: bold;
+}
+
+.terminal-texto {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #daf1de;
+  margin: 0;
+}
+
+.color-resaltado {
+  color: #fff; /* Tu carta de presentación resalta más */
+}
+
+/* Bloque de código simulado */
+.terminal-codigo-bloque {
+  font-family: monospace;
+  font-size: 0.95rem;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.comentario-codigo {
+  color: #6b7280; /* Gris para comentarios de código */
+  display: block;
+  margin-bottom: 8px;
+}
+
+.codigo-linea {
+  color: #fff;
+  margin: 0;
+}
+
+.palabra-clave {
+  color: #ff79c6; /* Rosa clásico de sintaxis tipográfica (ej: const) */
+  font-weight: bold;
+}
+
+.codigo-linea-indentada {
+  color: var(--color-btn);
+  margin: 0;
+  padding-left: 2ch; /* Indentación precisa en base a letras monoespaciadas */
+}
+
+/* ===================================================
+   DISEÑO RESPONSIVE
+=================================================== */
+@media (max-width: 768px) {
+  .about-contenedor {
+    width: 90dvw;
+  }
+  .about-card {
+    padding: 4.5rem 1.5rem 2rem 1.5rem;
+  }
+  .terminal-texto {
+    font-size: 0.95rem;
+  }
+  .terminal-codigo-bloque {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+}

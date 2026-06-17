@@ -1,7 +1,9 @@
 import './App.css'
+import { Contacto } from './components/Contacto'
 import { Habilidades } from './components/Habilidades'
 import { Hero } from './components/Hero'
 import { MisProyectos } from './components/Proyectos'
+import { SobreMi } from './components/SobreMi'
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Hero/>
       <MisProyectos/>
       <Habilidades/>
+      <SobreMi/>
+      <Contacto/>
     </>
   )
 }

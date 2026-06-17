@@ -5,7 +5,7 @@ const MisProyectos = () => {
   return (
     <section className="proyectos-seccion">
       <div className="proyectos-contenedor">
-        <h2 className="proyectos-titulo">Mis Proyectos</h2>
+        <h2 className="proyectos-titulo">Mis-Proyectos.md</h2>
 
         <div className="proyectos-grid">
           {misProyectos.map((proyecto) => {

@@ -42,3 +42,10 @@ export interface SkillCategory {
   titulo: string;
   lista: habilidades[];
 }
+
+export interface Biografia {
+  presentacion: string;
+  enfoque: string;
+  trayectoria: string;
+  datosCuriosos: string[];
+}

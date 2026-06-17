@@ -17,7 +17,7 @@ import {
   IconoLinkedIn,
   IconoNodeJS,
 } from "../components/iconos/iconosContacto";
-import type { ProfileHero, Proyectos, SkillCategory } from "../types/profile";
+import type { ProfileHero, Proyectos, SkillCategory, Biografia } from "../types/profile";
 
 // informacion para el hero
 export const miPerfil: ProfileHero = {
@@ -119,3 +119,15 @@ export const misHabilidades: SkillCategory[] = [
     ],
   },
 ];
+
+// biografia
+export const miBiografia: Biografia = {
+  presentacion: "Soy un desarrollador Full Stack apasionado por construir soluciones web eficientes y escalables utilizando el ecosistema MERN.",
+  enfoque: "Mi enfoque actual está centrado en la optimización del rendimiento frontend mediante React y TypeScript, combinándolo con arquitecturas backend limpias y robustas.",
+  trayectoria: "Estudiante avanzado de Licenciatura en Informática | Diplomatura en desarrollo web FullStack | Tecnicatura en tecnologias Web, lo que me brinda una sólida base teórica en algoritmos, estructuras de datos y metodologías ágiles.",
+  datosCuriosos: [
+    "Prefiero el modo oscuro en absolutamente todo.",
+    "Bebo café negro como combustible para resolver bugs.",
+    "Me encanta desarmar código de otros para entender cómo funciona la ingeniería detrás."
+  ]
+};
