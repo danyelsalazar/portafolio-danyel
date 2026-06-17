@@ -88,7 +88,7 @@ export const misProyectos: Proyectos[] = [
       },
       {
         icono: SiNextdotjs,
-        label: "NexJS",
+        label: "NextJS",
       },
       {
         icono: SiTailwindcss,
