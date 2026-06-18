@@ -2,6 +2,9 @@
 
 [![Vercel Deployment](https://shields.io)](https://portafolio-danyel.vercel.app/)
 
+### Repositorio gitHub: 
+https://github.com/danyelsalazar/portafolio-danyel.git
+
 Un portafolio web modular e interactivo de nivel profesional, diseñado bajo la estética de un Entorno de Desarrollo Integrado (IDE) y terminal de comandos Unix. Desarrollado con el ecosistema de React y TypeScript, implementando optimizaciones de hardware para animaciones fluidas y un diseño adaptable a cualquier dispositivo móvil.
 
 ---
