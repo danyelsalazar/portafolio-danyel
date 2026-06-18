@@ -1,8 +1,6 @@
 # Danyel Salazar | Portfolio Terminal OS v2.1.0
 
-[![Vercel Deployment](https://shields.io)](https://vercel.app)
-[![React TypeScript](https://shields.io)](https://react.dev)
-[![Style UI](https://shields.io)](#interfaz-y-diseño)
+[![Vercel Deployment](https://shields.io)](https://portafolio-danyel.vercel.app/)
 
 Un portafolio web modular e interactivo de nivel profesional, diseñado bajo la estética de un Entorno de Desarrollo Integrado (IDE) y terminal de comandos Unix. Desarrollado con el ecosistema de React y TypeScript, implementando optimizaciones de hardware para animaciones fluidas y un diseño adaptable a cualquier dispositivo móvil.
 
@@ -15,27 +13,6 @@ Un portafolio web modular e interactivo de nivel profesional, diseñado bajo la 
 - **Estilos y UI:** CSS3 Avanzado (Filtros de cristal translúcido, Variables dinámicas, Media Queries avanzadas)
 - **Gestión de Formularios:** Formspree API (Transmisión segura de paquetes de datos de contacto a Gmail)
 - **Librería de Iconos:** react-icons (Estructura de renderizado dinámico en mapeos)
-
----
-
-## Arquitectura del Proyecto
-
-El código está estructurado bajo las mejores prácticas de modularidad, separando estrictamente la lógica de renderizado de la base de datos estática:
-
-```text
-├── src/
-│   ├── components/
-│   │   ├── Header.tsx           # Barra de estado del sistema (Navegación dinámica)
-│   │   ├── Hero.tsx             # Panel de presentación con luz interactiva y typing effect
-│   │   ├── MisProyectos.tsx     # Grid automatizado de proyectos destacados
-│   │   ├── Habilidades.tsx     # Contenedor padre de la matriz de habilidades
-│   │   ├── SkillCard.tsx        # Componente hijo aislado (Estados de memoria independientes)
-│   │   ├── SobreMi.tsx          # Terminal de biografía ejecutando scripts simulados
-│   │   └── Contacto.tsx         # Consola de envío de datos del formulario
-│   ├── data/
-│   │   └── profileData.ts       # Base de datos estática e interfaces de TypeScript
-│   └── styles/                  # Hojas de estilo CSS optimizadas por GPU
-```
 
 ---
 
