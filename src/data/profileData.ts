@@ -140,7 +140,7 @@ export const misProyectos: Proyectos[] = [
       label: "Repositorio",
       linkURL: "https://github.com/danyelsalazar/frontend-info-track-UNO.git",
     },
-    demoURL: "https://frontend-info-track-46usp0k4t-danyelsalazars-projects.vercel.app/",
+    demoURL: "https://infotrack.vercel.app/",
   },
   {
     id: "3",
